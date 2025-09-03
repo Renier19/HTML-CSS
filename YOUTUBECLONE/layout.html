@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layouts</title>
+  <style>
+    .profile-tab {
+      width: 600px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+
+    .profile-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-image img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .profile-name {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .profile-type,
+    .profile-status {
+      margin: 0;
+      color: gray;
+    }
+
+    .follow-btn {
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .follow-btn:hover {
+      opacity: 0.8;
+    }
+
+    .follow-btn:active {
+      opacity: 0.2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="profile-tab">
+    <div class="profile-left">
+      <div class="profile-image">
+        <img src="image/cat1.jpg" alt="Profile">
+      </div>
+      <div class="profile-info">
+        <p class="profile-name">oliver</p>
+        <p class="profile-type">the cat</p>
+        <p class="profile-status">Famous</p>
+      </div>
+    </div>
+    <button class="follow-btn">FOLLOW</button>
+  </div>
+</body>
+
+</html>

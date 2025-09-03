@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images and Text Box</title>
+    <style>
+
+        .image-1{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 30px;
+        }
+
+        .image-2{
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 150px;
+             margin-bottom: 30px;
+        }
+
+        .image-3{
+            width: 500px;
+            border-radius: 50px;
+            display: block;
+            margin-bottom: 30px;
+             
+        }
+
+        .search-bar{
+            padding:10px;
+            border-radius:5px;
+            border:1px solid;
+            display:block;
+             margin-bottom: 30px;
+            
+            
+            
+        }
+
+        .google-bar{
+            padding:10px;
+            width:400px;
+            border:none;
+            border-radius:30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, .3); 
+            display:block;
+             margin-bottom: 30px;
+        }
+
+        .google-bar:focus{
+            outline:none;
+        }
+
+
+
+
+        /*second act*/
+
+        .main-container{
+            display:inline-block;
+            width: 400px;
+        }
+
+        .email-label{
+            font-family: arial;
+            color:rgb(91, 91, 91);
+            margin-bottom:0;
+            font-size: 15px;
+            outline-color: rgb(91, 91, 91);
+        }
+        .email-bar{
+            padding:10px;
+            width:400px;
+            margin:5px 0px 5px 0px;
+
+            border-radius: 3px;
+            border:1px solid;
+        }
+
+        .email-bar:focus{
+            outline:none;
+        }
+
+
+        .privacy{
+            font-family:arial;
+            color:rgb(91, 91, 91);
+            margin-top:10px;
+            font-size: 14px;
+
+        }
+
+        .agree-button{
+            width:420px;
+            padding:20px;
+            border-radius:40px;
+            background-color: rgb(51, 51, 211);
+            color:white;
+            border:none;
+            margin-top:3px;
+            font-size: 20px;
+        }
+
+        .agree-button:hover{
+            opacity:.8;
+        }
+
+        .agree-button:active{
+            opacity:.5;
+        }
+
+        /*profile tan*/
+
+        .profile-tab{
+            display:flex;
+            margin-top:20px;
+            align-items: center;
+        }
+        
+        .profile-image{
+            display:inline-block;
+            width:50px;
+            border-radius:30px;
+            gap:10px;
+            margin-right:10px;
+
+        }
+
+        .tweet-content{
+            align-items: center;
+            display:flex;
+            gap:10px;
+            font-family: arial;
+            font-size:14px;
+        }
+
+        .tab-question{
+            color: rgb(91, 91, 91);
+            border:none;
+  outline:none;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+        }
+
+        .tab-question:focus{
+            outline: none;
+  border: 2px solid rgb(29, 155, 240);
+  background-color: white;
+  
+        }
+
+
+
+        .tweet-button{
+            background-color: rgb(29, 155, 240);
+            color:white;
+            width: 70px;
+            border-radius: 20px;
+            border:none;
+            padding:9px;
+        
+        
+
+        }
+
+        .tweet-button:hover{
+            opacity:.8;
+            
+        }
+
+        .tweet-button:active{
+            opacity:.5;            
+        }
+
+        /*third activity*/
+        .name-section{
+            display:flex;
+            margin-top:20px;
+            gap:5px;
+            margin-bottom: 10px;
+        }
+
+        input{
+            padding:10px;
+            border-radius: 5px;
+            border:1px rgb(91, 91, 91) solid;
+        }
+
+        input:focus{
+            outline:1px rgb(91, 91, 91) solid;
+            border:none;
+            
+        }
+
+
+        
+        .email-input{
+            display:block;
+            width: 350px;
+            margin-bottom:10px;
+
+        }
+
+        .sign-button{
+            background-color:rgb(29, 155, 240);
+            color:white;
+            width: 370px;
+            padding:10px;
+            border:none;
+            border-radius: 10px;
+            font-size:20px;
+            cursor: pointer;
+        }
+
+        .sign-button:hover{
+            opacity:.8;
+        }
+
+        .sign-button:active{
+            opacity:.5;
+        }
+
+
+
+ 
+    
+
+    </style>
+</head>
+<body>
+    <img class="image-1" src="image/download.png" alt="Video Frame">
+    <br>
+    <img class="image-2" src="image/download.png" alt="Video Frame">
+    <br>
+    <img class="image-3" src="image/download.png" alt="Video Frame">
+
+    <input class="search-bar" type="text" placeholder="Search">
+
+    <input class="google-bar" type="text"  placeholder="Search Google or type URL">
+
+    <!-- Second activity-->
+
+    <div class="main-container">
+        <p class="email-label">Email</p>
+        <input  class="email-bar" type="text" placeholder="name@gmail.com">
+        <p class="privacy"> By clicking Agree & Join, you agree to the Privacy Policy</p>
+        <button class="agree-button">Agree & Join</button>
+
+    </div>
+
+    <div class="profile-tab">
+        <img class="profile-image" src="image/gundam.jpg" >
+        <div class="tweet-content">
+        <input type="text" class="tab-question" placeholder="What's happenign">
+        <button class="tweet-button">Tweet</button>
+        </div>
+    </div>
+
+    <!--third activity-->
+
+    <div class="name-section">
+        <input class="name-input" type="text" placeholder="First Name"></input>
+        <input class="last-input" type="text" placeholder="Last Name"></input>
+    </div>
+
+    <input class="email-input" type="text" placeholder="Email"></input>
+    <button class="sign-button">Sign Up</buton>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

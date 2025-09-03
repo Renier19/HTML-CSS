@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+
+    <style>
+        .red-box{
+            width:100px;
+            height:100px;
+            background-color: red;
+        }
+
+        .green-circle{
+            width:100px;
+            height:100px;
+            background-color:green;
+            border-radius:100px; 
+            margin-top:20px;       
+        }
+
+        /*------------------------------------------------------*/
+        .question-box{
+            border:1px rgb(91, 91, 91) solid;
+            display:inline-block;
+            padding:20px;
+            width: 300px;
+            padding-top: 0;
+            margin-top:20px;
+        }
+
+        .button-box{
+            display:flex;
+        }
+
+        button{
+            width:40px;
+            margin-right:5px;
+        }
+
+        /*------------------------------------------------------*/
+
+        .youtube-box{
+            font-family:arial;
+            background-color: rgb(36, 36, 36);
+            display:inline-block;
+            height:93px;
+            padding:5px 10px 20px 20px;
+            width:350px;
+            color:white;
+            margin-top:20px;
+        }
+
+        .first-par{
+            font-size: 20px;
+            font-weight:bold;
+            color:white;
+            padding-bottom:0px;
+            margin-bottom:0px;
+            
+        }
+        .second-par{
+            color:rgb(91, 91, 91);
+            padding-top:0px;
+        }
+
+        /*------------------------------------------------------*/
+
+        .profile-tab{
+            display:inline-block;
+            width:150px;
+            padding-top:0px;
+            font-family:arial;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+            margin-top:20px;
+            height: 245px;
+            margin-right: 15px;
+        }
+
+        .profile-1{
+            width:150px;
+            height:150px;
+            object-fit: cover;
+            margin-bottom: 0px;
+            vertical-align: bottom;
+        }
+
+        .profile-name{
+            font-family:arial;
+            font-weight:bold;
+            font-size:14px;
+            padding:5px;
+            margin:0px;
+            padding-top:8px;
+            
+        }
+
+        .info{
+            
+            margin-top: 0px;
+            height:90px;
+        }
+
+        .profile-friends{
+            margin:0px;
+            font-size:12px;
+            padding:5px;
+            color:rgb(91, 91, 91);
+
+        }
+
+        .add-button{
+            width:70px;
+            font-size:10px;
+            background-color:  rgb(29, 155, 240);
+            padding:8px;
+            border:none;
+            margin:5px;
+            border-radius:3px;
+            color:white;
+            cursor: pointer;
+        }
+
+        .add-button:hover{
+            opacity: .8;
+        }
+
+        .add-button:active{
+            opacity:.5;
+        }
+
+        /*------------------------------------------------------*/
+        
+       
+
+
+    </style>
+</head>
+<body>
+
+    <div class="red-box"></div>
+    <div class="green-circle"></div>
+
+    <div class="question-box">
+        <p>Satisfied with our service?</p>
+        <div class="button-box">
+            <button>Yes</button>
+            <button>No</button>
+        </div>
+    </div>
+    <br>
+
+    <!-------------------------------------------------------------->
+
+    <div class="youtube-box">
+        <p class="first-par">Install Youtube Music</p>
+        <p class="second-par">Add Youtube Music to your desktop for quick and easy acess</p>
+    </div>
+
+    <br>
+    
+     <!-------------------------------------------------------------->
+
+     <div class="profile-tab">
+        <img class="profile-1" src="image/cat1.jpg">
+        <div class="info">
+            <p class="profile-name">Catius Clay</p>
+            <p class="profile-friends">2 mutual friends</p>
+            <button class="add-button">Add Friend</button>
+
+
+        </div>
+     </div>
+
+     <div class="profile-tab">
+        <img class="profile-1" src="image/cat2.jpg">
+        <div class="info">
+            <p class="profile-name">Catnip Everpurr</p>
+            <p class="profile-friends">3 mutual friends</p>
+            <button class="add-button">Add Friend</button>
+
+
+        </div>
+     </div>
+
+     <div class="profile-tab">
+        <img class="profile-1" src="image/cat3.webp">
+        <div class="info">
+            <p class="profile-name">Catrick Bateman</p>
+            <p class="profile-friends">5 mutual friends</p>
+            <button class="add-button">Add Friend</button>
+
+
+        </div>
+     </div>
+
+      <!-------------------------------------------------------------->
+
+
+
+
+</body>
+</html>
