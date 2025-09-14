@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>For You 💌</title>
+<style>
+  :root{
+    --bg:#FFF6F9;
+    --card:#ffffff;
+    --accent:#ff5c8a;
+    --muted:#6b6b6b;
+  }
+  *{box-sizing:border-box;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+  body{
+    margin:0;
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    background:
+      radial-gradient(1200px 400px at 10% 10%, rgba(255,92,138,0.06), transparent 20%),
+      radial-gradient(900px 300px at 90% 90%, rgba(255,200,220,0.06), transparent 20%),
+      var(--bg);
+  }
+
+  .card{
+    width:min(720px, 92vw);
+    background:linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
+    border-radius:18px;
+    padding:28px;
+    box-shadow: 0 12px 30px rgba(8,8,10,0.08);
+    position:relative;
+    overflow:hidden;
+  }
+
+  .top-blob{
+    position:absolute;
+    right:-120px;
+    top:-120px;
+    width:320px;height:320px;
+    background:linear-gradient(135deg, rgba(255,92,138,0.18), rgba(255,167,190,0.08));
+    transform:rotate(20deg);
+    border-radius:45%;
+    filter: blur(8px);
+    pointer-events:none;
+  }
+
+  h1{
+    margin:0;
+    font-size:28px;
+    color:var(--accent);
+    letter-spacing:0.2px;
+  }
+
+  p.lead{
+    margin:12px 0 20px 0;
+    color:var(--muted);
+    line-height:1.45;
+  }
+
+  .message{
+    background:linear-gradient(180deg, rgba(255,245,247,0.9), rgba(255,255,255,0.95));
+    border-radius:12px;
+    padding:18px;
+    border:1px solid rgba(255,92,138,0.06);
+    box-shadow: 0 6px 16px rgba(8,8,10,0.03) inset;
+    font-size:16px;
+    color:#333;
+  }
+
+  .actions{
+    margin-top:18px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+
+  .btn{
+    background:var(--accent);
+    color:white;
+    padding:10px 16px;
+    border-radius:10px;
+    text-decoration:none;
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    border:0;
+    cursor:pointer;
+    font-weight:600;
+    box-shadow: 0 8px 18px rgba(255,92,138,0.12);
+  }
+  .btn.ghost{
+    background:transparent;
+    color:var(--accent);
+    border:1px solid rgba(255,92,138,0.12);
+    box-shadow:none;
+    font-weight:600;
+  }
+
+  .heart{
+    display:inline-block;
+    width:22px;height:22px;
+    transform:translateY(1px);
+  }
+
+  /* floating hearts */
+  .floating {
+    position:absolute;
+    left:10%;
+    bottom:-60px;
+    width:12px;height:12px;
+    opacity:0.85;
+    animation: floatUp 6s linear infinite;
+    filter:drop-shadow(0 6px 10px rgba(255,92,138,0.08));
+  }
+  .floating:nth-child(2){ left:28%; animation-duration:5.2s; transform:scale(.9);}
+  .floating:nth-child(3){ left:46%; animation-duration:6.8s; transform:scale(1.1);}
+  .floating:nth-child(4){ left:64%; animation-duration:5.7s; transform:scale(.8);}
+  .floating:nth-child(5){ left:82%; animation-duration:7.2s; transform:scale(1.05);}
+
+  @keyframes floatUp{
+    0%{ transform: translateY(0) scale(1); opacity:0; }
+    10%{ opacity:1;}
+    70%{ opacity:1; }
+    100%{ transform: translateY(-420px) scale(1.2); opacity:0; }
+  }
+
+  footer{
+    margin-top:16px;
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  /* small responsive */
+  @media (max-width:420px){
+    h1{ font-size:22px;}
+    .card{ padding:18px; border-radius:14px;}
+  }
+</style>
+</head>
+<body>
+  <div class="card" role="main" aria-label="Sweet note">
+    <div class="top-blob" aria-hidden="true"></div>
+
+    <h1>For <span id="gfNameDisplay">Someone special</span> <span aria-hidden="true">💖</span></h1>
+    <p class="lead">A little note to brighten your day — made just for you.</p>
+
+    <div class="message" id="messageBox">
+      <!-- Default message; the JavaScript below will replace this if you customize -->
+      Hi love — I hope this surprise makes you smile. Thinking of you today and always. 🌸
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="revealBtn" title="Show a cute surprise">
+        <svg class="heart" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21s-7-4.35-9-7.5C-1.5 8.5 5 4 8.5 7.5 10 9 12 10.5 12 10.5s2-1.5 3.5-3C19 4 25.5 8.5 21 13.5 19 16.65 12 21 12 21z" fill="white"/>
+        </svg>
+        Open surprise
+      </button>
+
+      <button class="btn ghost" id="emailBtn" title="Send by email">
+        Send by email
+      </button>
+
+      <button class="btn ghost" id="copyBtn" title="Copy message">
+        Copy message
+      </button>
+    </div>
+
+    <footer>
+      Tip: edit the name/message in the file to personalize it before sending.
+    </footer>
+
+    <!-- floating hearts (pure CSS animation) -->
+    <svg class="floating" viewBox="0 0 24 24" fill="none" style="--i:1">
+      <path d="M12 21s-7-4.35-9-7.5C-1.5 8.5 5 4 8.5 7.5 10 9 12 10.5 12 10.5s2-1.5 3.5-3C19 4 25.5 8.5 21 13.5 19 16.65 12 21 12 21z" fill="#ff5c8a"/>
+    </svg>
+    <svg class="floating" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-1.5 8.5 5 4 8.5 7.5 10 9 12 10.5 12 10.5s2-1.5 3.5-3C19 4 25.5 8.5 21 13.5 19 16.65 12 21 12 21z" fill="#ff9fb3"/></svg>
+    <svg class="floating" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-1.5 8.5 5 4 8.5 7.5 10 9 12 10.5 12 10.5s2-1.5 3.5-3C19 4 25.5 8.5 21 13.5 19 16.65 12 21 12 21z" fill="#ffd1dc"/></svg>
+    <svg class="floating" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-1.5 8.5 5 4 8.5 7.5 10 9 12 10.5 12 10.5s2-1.5 3.5-3C19 4 25.5 8.5 21 13.5 19 16.65 12 21 12 21z" fill="#ffc0d2"/></svg>
+    <svg class="floating" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9-7.5C-1.5 8.5 5 4 8.5 7.5 10 9 12 10.5 12 10.5s2-1.5 3.5-3C19 4 25.5 8.5 21 13.5 19 16.65 12 21 12 21z" fill="#ff7aa6"/></svg>
+  </div>
+
+<script>
+  // --- CUSTOMIZE HERE ---
+  const GF_NAME = "Your Love"; // change to her name, e.g. "Ava"
+  const MESSAGE = "Hey " + GF_NAME + " — just a little surprise to say I love you. You're my favorite person. ❤️"; 
+  // ----------------------
+
+  // put the name and message into the page
+  document.getElementById('gfNameDisplay').textContent = GF_NAME;
+  document.getElementById('messageBox').textContent = MESSAGE;
+
+  // reveal button: small playful animation + heart pop
+  const revealBtn = document.getElementById('revealBtn');
+  revealBtn.addEventListener('click', () => {
+    revealBtn.textContent = "💖 Sent with love";
+    revealBtn.disabled = true;
+    // small confetti-like burst using DOM hearts
+    for(let i=0;i<12;i++){
+      const s = document.createElement('div');
+      s.textContent = "💗";
+      s.style.position = "fixed";
+      s.style.left = (50 + (Math.random()*40-20)) + "%";
+      s.style.top = (60 + Math.random()*10) + "%";
+      s.style.fontSize = (12 + Math.random()*22) + "px";
+      s.style.pointerEvents = "none";
+      s.style.opacity = "0.95";
+      s.style.transform = `translate(-50%,0) rotate(${Math.random()*360}deg)`;
+      s.style.transition = `transform 1.6s ease-out, opacity 1.6s ease-out`;
+      document.body.appendChild(s);
+      requestAnimationFrame(()=> {
+        s.style.transform = `translate(${(Math.random()*300-150)}px, -300px) rotate(${Math.random()*720}deg) scale(${0.6+Math.random()})`;
+        s.style.opacity = "0";
+      });
+      setTimeout(()=> s.remove(), 1600);
+    }
+  });
+
+  // copy message button
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(MESSAGE);
+      const b = document.getElementById('copyBtn');
+      b.textContent = "Copied!";
+      setTimeout(()=> b.textContent = "Copy message", 1400);
+    } catch (e) {
+      alert("Couldn't copy — you can select the message and press Ctrl+C.");
+    }
+  });
+
+  // email button: opens default mail client with the message
+  document.getElementById('emailBtn').addEventListener('click', () => {
+    const subject = encodeURIComponent("A little surprise for you 🌸");
+    const body = encodeURIComponent(MESSAGE + "\n\n— sent with love");
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+  });
+</script>
+</body>
+</html>
