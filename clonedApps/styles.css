@@ -1,0 +1,178 @@
+ 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+ 
+.navbar {
+  display: flex;
+  background-color: rgba(75, 46, 46, 0.9);
+  height: 50px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  margin-left: 80px;
+  height: 40px;
+}
+
+.title {
+  color: white;
+  margin-left: 20px;
+}
+
+.navbar ul {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 100px;
+}
+
+.navbar a {
+  color: #D4A373;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+ 
+.home {
+  height: 700px;
+  background-image: url("photos/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.landing {
+  margin-left: 100px;
+  width: 500px;
+}
+
+.hero-heading {
+  font-size: 3rem;
+  color: #FF6F3C;
+  margin-bottom: 10px;
+}
+
+.hero-subtext {
+  color: #FAF3E0;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.button {
+  width: 200px;
+  height: 50px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#order-button {
+  background-color: #FF6F3C;
+  border: none;
+  color: #fff;
+}
+
+#contact-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid #FF6F3C;
+  color: #FF6F3C;
+}
+
+ 
+.menu {
+  display: flex;
+  padding: 100px 50px;
+  background: #fff;
+}
+
+.menu-pic {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.coffee-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.coffee-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+ 
+.product {
+  padding: 15px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.8);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.icecoffe {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.buy-button, .add-button {
+  width: 90px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-button {
+  background-color: #FF6F3C;
+  color: #fff;
+}
+
+.add-button {
+  background-color: #D4A373;
+  color: #fff;
+}
+
+ 
+.about-us, .contact-us {
+  padding: 80px 50px;
+  background: #f7f7f7;
+}
